@@ -22,7 +22,7 @@ class Song < ActiveRecord::Base
   def note_contents
     if self.notes
       self.notes.collect do |n|
-        n.content unless n.empty?
+        n.content unless n == ""
       end
     end
   end
