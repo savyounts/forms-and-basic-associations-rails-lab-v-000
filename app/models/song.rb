@@ -24,8 +24,6 @@ class Song < ActiveRecord::Base
       self.notes.collect do |n|
         n.content
       end
-    else
-      nil
     end
   end
 
