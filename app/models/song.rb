@@ -20,7 +20,7 @@ class Song < ActiveRecord::Base
   end
 
   def note_contents
-    if self.notes 
+    if self.notes
       self.notes.each do |n|
         n.content
       end
@@ -28,7 +28,7 @@ class Song < ActiveRecord::Base
       nil
     end
   end
-  
+
 
   def genre_id=(id)
     self.genre = Genre.find(id)
