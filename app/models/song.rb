@@ -14,7 +14,7 @@ class Song < ActiveRecord::Base
 
   def note_contents=(contents)
     contents.each do |n|
-      note = Note.find_or_create_by(content: n)
+      note = Note.find_or_create_by(content: n) unless n.empty?
       self.notes << note
     end
   end
@@ -22,7 +22,7 @@ class Song < ActiveRecord::Base
   def note_contents
     if self.notes
       self.notes.collect do |n|
-        n.content unless n == ""
+        n.content
       end
     end
   end
