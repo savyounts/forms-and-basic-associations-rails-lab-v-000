@@ -19,7 +19,16 @@ class Song < ActiveRecord::Base
     end
   end
 
-
+  def note_contents
+    if self.notes 
+      self.notes.each do |n|
+        n.content
+      end
+    else
+      nil
+    end
+  end
+  
 
   def genre_id=(id)
     self.genre = Genre.find(id)
