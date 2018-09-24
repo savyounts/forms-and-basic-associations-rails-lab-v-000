@@ -19,6 +19,9 @@ class Song < ActiveRecord::Base
     end
   end
 
+  def note_contents
+    self.notes ? self.notes.content : nil
+
   def genre_id=(id)
     self.genre = Genre.find(id)
   end
