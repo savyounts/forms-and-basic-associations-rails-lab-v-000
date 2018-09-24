@@ -7,5 +7,5 @@ class Note < ActiveRecord::Base
       song = Song.find(id)
       self.songs << song
     end
-  end
+
 end
