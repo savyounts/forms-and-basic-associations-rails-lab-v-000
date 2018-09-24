@@ -17,4 +17,6 @@ class Song < ActiveRecord::Base
       note = Note.find_or_create_by(id: id)
       self.notes << note
     end
+
+    
 end
